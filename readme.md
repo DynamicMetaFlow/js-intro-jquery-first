@@ -60,14 +60,14 @@ So, to sum up the main three components of front-end web development up in one w
 ## Javascript: The Client-Side Programming Language of the Web (5 minutes, 0:25)
 
 **Brief history:** Created in 10 days by Brendan Eich, of Mozilla. *Not* related to Java in any way but its name.
-  * "Java" is to "Javascript" as "ham" is to "hamster"
+* "Java" is to "Javascript" as "ham" is to "hamster"
 
 **Q:** What's a programming language?  
-  * What can it do that a markup language like HTML can't?
-  * It let's us do things! It lets us act on information, manipulate it, display it, pretty much whatever we want.
+* What can it do that a markup language like HTML can't?
+* It let's us do things! It lets us act on information, manipulate it, display it, pretty much whatever we want.
 
 Javascript enables us to do all that in a browser.  
-    * Using the tools you learned in the pre-work (e.g., data types, loops, functions).
+* Using the tools you learned in the pre-work (e.g., data types, loops, functions).
 
 ### Why is it the dominant programming language of the web?
 
@@ -75,7 +75,6 @@ Barriers to entry for learning Javascript are very low.
 * No additional software required to run it. Just a text editor and a browser.
 * You can even run it directly in the browser via its Javascript console.
   * Ex. Hide images on the GA website.
-  * You'll learn more about the browser Javascript console when you start adding Javascript to the websites you make in this class.
 * On top of that, it's supported by all web browsers.
 
 Javascript has evolved since its creation.
@@ -88,10 +87,13 @@ A lot of frameworks and libraries -- like Backbone and jQuery -- have emerged th
 ## First, create your HTML and JS
 
 ```bash
-touch index.html script.js
+# In Terminal..
+$ touch index.html script.js
 ```
 
 ```html
+<!-- index.html -->
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -120,7 +122,10 @@ The "Console" is a REPL (`Read-Eval-Print Loop`)
 > `⌘ + ⌥ + i` enters you in the the Chrome dev tools. Here you can do a bunch of stuff like inspect elements and looks at the html. More importantly for this class though, is it allows you to access the console which interacts with the JS you loaded to your page. In our case we'll see that interaction with the code below  
 
 We can also run whatever code is located in the `script.js` that is referenced in `index.html`. Try putting the following code in `script.js` and reload the page...
+
 ```js
+// script.js
+
 console.log( "hello world" )
 ```
 > `console.log()` is just a way to log or print something, in this case our REPL.  
