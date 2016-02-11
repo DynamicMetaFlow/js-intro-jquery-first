@@ -87,7 +87,7 @@ A lot of frameworks and libraries -- like Backbone and jQuery -- have emerged th
 ## First, create your HTML and JS
 
 ```bash
-# In Terminal..
+# In Terminal...
 $ touch index.html script.js
 ```
 
