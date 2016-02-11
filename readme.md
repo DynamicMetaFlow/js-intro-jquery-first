@@ -107,195 +107,32 @@ touch index.html script.js
 
 Open the Javascript console in the browser using the following shortcut: `Command + Option + I`
 
-The "Console" is a REPL
-* `Read-Eval-Print Loop`: a programming environment that lets us run Javascript code one line at a time.
+The "Console" is a REPL (`Read-Eval-Print Loop`)
+* What's that? A programming environment that lets us run Javascript code one line at a time.
 * What does it do?
   1. (R)eads our code.
   2. (E)valuates it.
   3. (P)rints it to the console.
   4. Then it (L)oops back to the beginning, ready to (R)ead the next line of code we feed it.
+* Try running some simple lines of code (e.g., `2+2`) in the console!
 
 > `⌘ + ⌥ + i` enters you in the the Chrome dev tools. Here you can do a bunch of stuff like inspect elements and looks at the html. More importantly for this class though, is it allows you to access the console which interacts with the JS you loaded to your page. In our case we'll see that interaction with the code below  
 
-> Instructions for Safari? Firefox?  
-
-In your `script.js` file add the following:
+We can also run whatever code is located in the `script.js` that is referenced in `index.html`. Try putting the following code in `script.js` and reload the page...
 ```js
 console.log( "hello world" )
 ```
-
 > `console.log()` is just a way to log or print something, in this case our REPL.  
 
-# Primitive Data Types
+# Exercises
 
-## Intro (5 minutes, 0:35)
+Today's class is dedicated to solidifying your knowledge of Javascript fundamentals (i.e., things you covered in the course pre-work!). Because of that, the structure of the remainder of the class is going to be exercised-based. It will give you a chance to practice what you've already learned and dive in a bit deeper into the subject matter.
 
-Primitive data types are the building blocks of Javascript.
-* Whenever you do anything in Javascript, you are creating and changing these basic pieces of information.
+**[Data Type Exercises](https://github.com/ga-wdi-exercises/js-data-types)**. An assorted grouping of Javascript exercises that
 
-### Q: What are the five primitive data types?
+**[Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter).** This exercise will tie together everything you practiced in the previous exercise (and more). If you finish this with time to spare in the lesson, start working on the homework.
 
-> 1. Numbers  
-> 2. Strings  
-> 3. Booleans  
-> 4. Undefined  
-> 5. Null  
-
-We store data types in variables. A variable is a "bucket" that holds data. You can pass the bucket around, empty it, refill it, etc.
-* Format: `var NAME = DATA;`
-
-```js
-// For example...
-var myClass = "WDI7";
-
-// After instantiation you can then reference variables by just their name, without "var".
-myClass;
-=> "WDI7"
-
-// Variables can not only store single data types but also expressions.
-var multiplication = 5 * 2;
-=> 10
-```
-
-Javascript is a "dynamic" or "untyped" language, meaning a variable can switch between data types.  
-
-```js
-// This change is valid in Javascript.
-var myFavoriteNumber = 5;
-var myFavoriteNumber = "five";
-```
-
-## Numbers (10 minutes, 0:45)
-
-In Javascript, numbers are numerical values -- straightforward!
-* All numbers are of type "number," regardless of format (e.g., integer, float/decimal).
-
-```js
-// The "typeof" operator returns the data type of a value
-typeof 5;
-=> "number"
-
-typeof 5.5;
-=> "number"
-```
-
-Operations
-* Math in Javascript follows the same rules you've known since elementary school math.
-* Basic operators: `+, -, *, /`
-
-```js
-// Addition
-10 + 2;
-=> 12
-
-// Subtraction
-10 - 2;
-=> 8
-
-// Multiplication
-10 * 2;
-=> 20
-
-// Division
-10 / 2;
-=> 5
-```
-
-Order of Operations
-* P(E)MDAS (Parentheses, Multiplication, Division, Addition, Subtraction)
-
-```js
-// This would be interpreted as...
-// Go through step by step with class.
-( 4 + 2 ) * ( 12 / 3 );
-=> 6 * 4
-=> 24
-
-// How would this be interpreted?
-// Like operators are processed from left-to-right. In this case, division happens before multiplication.
-( 8 / 4 * 2 ) + 1
-=> ( 2 * 2 ) + 1
-=> 5
-```
-
-% (Modulus)
-* Returns the remainder of a division operation.
-
-```js
-// What is the remainder of 12 / 5?
-12 % 5;
-=> 2
-```
-
-**Q: Can anybody think of a common, handy use case for modulus?**
-* Checking for evenness
-  * A number is even if it is divisible by 2 (i.e., `number%2 == 0`).
-
-```js
-// Returns 0 if even.
-4 % 2;
-=> 0
-
-// Returns 1 if odd.
-5 % 2;
-=> 1
-```
-
-### NaN ("Not a Number")
-
-A special number...that's not a number?  
-
-```js
-typeof NaN
-=> "number"
-```
-
-You usually get NaN when the result of a math operation is not real (e.g., dividing 0 by 0, multiplying strings together).  
-
-```js
-0/0;
-=> NaN
-```
-
-You can test whether a value is a valid number using the `isNaN()` function.  
-
-```js
-// isNaN returns false if used on a valid number.
-var myFavoriteNumber = 5;
-isNaN( myFavoriteNumber );
-=> false
-```
-
-## Undefined & Null (5 minutes, 0:50)
-
-Values that indicate the lack of a meaningful value.
-* Anybody else find that weird? How is there more than one data type for nothing?
-* **Q: What's the difference?**
-
-`undefined`: automatically applied to a variable with no value.  
-
-```js
-// A primitive data type of type undefined with only one value: "undefined".
-typeof undefined;
-=> "undefined"
-
-// Any property that has not been assigned a value is "undefined".
-var nothing;
-=> undefined
-
-// A function with no defined return value has a return value of "undefined".
-
-// You won't find yourself assigning "undefined" to a value. That's where "null" comes in.
-var nothing = undefined;
-```
-
-`null`: an explicitly-assigned non-value.
-* Javascript will never set anything to `null` by itself. `null` only appears when you tell it to.
-* If I'm not mistaken, the only thing that's inherently `null` in Javascript is `null` itself!
-* **Q: Can you imagine a situation where that would be useful?**
-  * Placeholder for a variable that you know will be replaced with an actual value later on.
-
-So the main difference between `undefined` and `null` is intention. Other than that, they're both...nothing.  
+# Some Things To Keep In Mind
 
 ### Type Coercion
 
@@ -331,21 +168,7 @@ parseInt( "burrito" );
 => NaN
 ```
 
-There are other examples of type coercion, but the point here isn't to remember them all. Just be aware that sometimes Javascript will fire weird results back at you with no explanation. Sometimes, type coercion might be the culprit.  
-
-## Strings (10 minutes, 1:00)
-
-Strings are words in javascript!  
-
-We instantiate strings using the "string literal" form.  
-
-```js
-// Can use single quotes to instantiate a string...
-var greeting = 'Hello!';
-
-/// ...or double quotes.
-var greeting = "Hi there!";
-```  
+There are other examples of type coercion, but the point here isn't to remember them all. Just be aware that sometimes Javascript will fire weird results back at you with no explanation. Sometimes, type coercion might be the culprit.
 
 ### Escape sequences
 
@@ -364,50 +187,38 @@ Sometimes you will need to use special characters or formatting in strings that 
 ```
 > You can check out more escape sequence examples [here](http://www.javascriptkit.com/jsref/escapesequence.shtml).  
 
-### Concatenation
+### Undefined & Null (5 minutes, 0:50)
 
-Like numbers, you can add strings together using `+`.  
+Values that indicate the lack of a meaningful value.
+* Anybody else find that weird? How is there more than one data type for nothing?
+* **Q: What's the difference?**
 
-```js
-var city = "Washington, ";
-var state = "DC";
-var address = city + state;
-=> "Washington, DC"
-```
-
-You can't, however, use other math operators on strings.  
+`undefined`: automatically applied to a variable with no value.  
 
 ```js
-// Q: What do you think happens when we try to subtract strings from each other?
-// When using the "-" operator, the operands are treated as numbers.
-"hamburger" - "ham"
-=> NaN
+// A primitive data type of type undefined with only one value: "undefined".
+typeof undefined;
+=> "undefined"
 
-// The same goes for multiplication and division.
-"hamburger" * 3
-=> NaN
+// Any property that has not been assigned a value is "undefined".
+var nothing;
+=> undefined
+
+// A function with no defined return value has a return value of "undefined".
+
+// You won't find yourself assigning "undefined" to a value. That's where "null" comes in.
+var nothing = undefined;
 ```
 
-String methods
-* Javascript comes with methods you can use to inspect and modify strings.
+`null`: an explicitly-assigned non-value.
+* Javascript will never set anything to `null` by itself. `null` only appears when you tell it to.
+* If I'm not mistaken, the only thing that's inherently `null` in Javascript is `null` itself!
+* **Q: Can you imagine a situation where that would be useful?**
+  * Placeholder for a variable that you know will be replaced with an actual value later on.
 
-```js
-// .search(): find the starting index of a string value.
-// String indexes are 0-based, so the index of a string's first character is 0.
-var greetings = "Hi there Andy!";
-greetings.search( "Andy" );
-=> 9
+So the main difference between `undefined` and `null` is intention. Other than that, they're both...nothing.  
 
-// .slice(): return and store a portion of a string.
-var greetings = "Hi there Andy!";
-var buddy = greetings.slice( 9, 13 );
-=> "Andy"
-```
-> More string method examples [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
-
-# Syntax & Semantic Naming
-
-## Syntax (5 minutes, 1:05)
+### Syntax (5 minutes, 1:05)
 
 Variable syntax
 * Variables should be named using camelCase lettering.
@@ -438,7 +249,7 @@ Comments
 */
 ```
 
-# Prompt (5 minutes, 1:10)
+### Prompt
 
 We've learned a lot about basic data types, but it'd be nice if we had a way of getting user input into our browser! We'll learn some ways to use forms and such later in the course, but for now, we'll be getting user input using the `prompt()` function.
 
@@ -457,97 +268,7 @@ You can also pass in a string as an argument to have the pop up box contain that
 var age = prompt("How old are you?")
 ```
 
-# CODING EXERCISE I + Break (20 minutes, 1:30)
-
-Temperature conversion (Part I): [https://github.com/ga-dc/temperature_converter](https://github.com/ga-dc/temperature_converter)  
-
-# Composite Data Types
-
-Composite data types are collections that allow us to store multiple data types.
-* **Q: There are two kinds in Javascript. What are they?**
-
-## Arrays (10 minutes, 1:40)
-
-An array is an ordered collection of related data types.
-* Organized by index.
-  * Indexing begins at 0 (e.g., first element in an array has an index of 0, the second has an index of 1, and so on).
-* "Related" doesn't mean that you can't mix data types (you can!), but usually the items in an array are related according to some sort of theme and as such, they tend to have the same data types (e.g., an array called `numbers` will probably only contain numerical values).
-
-There are two ways to instantiate an array...  
-
-```js
-// Instantiate with an array literal.
-var mountRushmore = [ "Washington", "Jefferson", "Roosevelt" ];
-
-// Can also instantiate using the Array constructor.
-var mountRushmore = new Array( "Washington", "Jefferson", "Roosevelt" );
-
-// Be careful when using the Array constructor. If you feed it a single numerical value, it will create an empty array of that length.
-var numbers = new Array( 5 );
-=> [ , , , , ]
-
-// ...but if you feed it anything else, it will create a single-value array.
-var animals = new Array( "dog" );
-=> [ "dog" ]
-```
-
-Accessing array values...  
-
-```js
-// Indexing begins at 0.
-// How do I access the first, second and third elements of the array?
-mountRushmore[0];
-=> "Washington"
-mountRushmore[1];
-=> "Jefferson"
-mountRushmore[2];
-=> "Roosevelt"
-
-mountRushmore.push("Lincoln");
-
-mountRushmore[3];
-=> "Lincoln"
-
-// You can also place arrays within arrays.
-var letters = [ ["a","b","c"], ["d","e","f"], ["g","h","i"] ];
-
-// How would I go about accessing the letter "f" in the above array? Walk me through it.
-letters[1][2];
-=> "f"
-```
-
-Array methods
-* There are a lot of useful methods that come with Javascript we can use to inspect and modify arrays. To learn what some of them are...
-  * `.length`
-  * `.push`
-  * `.indexOf`
-  * `.reverse`
-
-> There are many more, but these are the most widely-used.
-
-Documentation
-* [MDN Array Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-* Navigating documentation is a great skill to have. Some sets of documentation are harder to navigate than others, but if you have a sense of how to dig through a massive trove of information like MDN or RubyDocs, you'll become a much more efficient programmer.
-
-## Booleans (10 minutes, 1:50)
-
-A boolean can have one of two values: `true` or `false`.  
-* Oftentimes you'll be producing boolean values when comparing two values
-  * Comparison operators: `==`, `===`, `<`, `>`, `<=`, `>=`
-
-```js
-1 === 1
-=> true
-
-1 === 2
-=> false
-
-1 == "1"
-=> true
-```
-> What is the differences between the last two? When using `===`, it checks for both the data type and value. `==` only checks for value. Under the hood, though, `==` converts the data type to the same data type and then executes comparison.
-
-## True vs. False (5 minutes, 1:55)
+### Truthiness and Falsiness (5 minutes, 1:55)
 So we all know the boolean values of `true` and `false`. But there is also a concept of "truthy" and "falsey". In Javascript, the following things are "falsey"...
 * `false`
 * `0` (zero)
@@ -558,57 +279,7 @@ So we all know the boolean values of `true` and `false`. But there is also a con
 
 > Everything else is "truthy". Why might we need this programmatic concept of "truthy" and "falsey"? (ST-WG)
 
-## Comparison Operators (5 minutes, 2:00)
-
-* `&&`
-* `||`
-* `!`
-
-**Q: What do the following evaluate too?**
-
-```js
-true && false
-true || false
-5 > 12 && 12 >= 12
-17 > 12 || 4 <= 4
-```
-
-Demonstrate comparison operators in node
-
-* `<`, `<=`
-* `>`, `>=`
-* `!=`, `!==`
-* `==`, `===`
-
-```javascript
-55 == "55"
-=> true
-55 === "55"
-=> false
-```
-
-## Conditionals (15 minutes, 2:15)
-
-// Have an example somewhere where one of the more unusual "falsey" values (e.g., empty string) triggers a conditional.
-
-write and narrate through the following code (10m)
-
-```javascript
-var age = 24;
-if(age < 18) {
-  console.log("You're too young to enter this club! Get outta here")
-}
-else if(age >= 18 && age < 21){
-  console.log("Come on in! But no Drinking!!")
-}
-else{
-  console.log("Come on in!")
-}
-```
-
-Conditionals will always follow this pattern. There is a key word(if, else if, else). Followed by an expression that will evaluate to true or false in parentheses. Then followed by code to execute when condition is met.
-
-## Whitelisting vs Blacklisting
+### Whitelisting vs Blacklisting
 What's wrong with the following code?:
 
 ```javascript
@@ -624,71 +295,12 @@ else{
 }
 ```
 
+# Homework
 
-# BREAK (10min)
-
-
-## Loops(15/150)
-
-### For loop
-There are two ways to write a for loop.
-
-#### The first:
-
-```javascript
-for(var i = 0; i < 10; i++){
-  console.log(i)
-}
-```
-The first part is the keyword `for`.
-Followed by 3 parts `;` separated in parentheses.
-- The first part instantiates the iteratee. Essentially gives you access to this value in your code block as i. It starts at 0 in this case.
-- The second part is the comparison expression. That means this code will continue to execute until this expression evaluates to false.
-- The third and final part is how much the iteratee is incremented after each execution of the loop
-
-#### The second:
-
-```javascript
-// instantiate an array of names
-var names = ["adam", "matt", "andy", "adrian", "robin", "jesse"]
-for(i in names){
-  console.log(names[i])
-}
-```
-
-- Again this for loop starts with the keyword `for`.
-- In parentheses contains the iteratee followed by the keyword `in` followed by the complex data type you would like to iterate over(array or object)
-- In the brackets contains the code you would like executed for each iteration of the loop
-
-### You Do - Write a for loop that prints odd numbers to 100. Do not use conditionals
-
-### While Loop(15m)
-```javascript
-var i = 0;
-while(i < 10){
-  console.log(i)
-  // don't increment at first
-}
-```
-#### ST-WG
-What are the differences between `for` and `while`?
-
-// Through example or pose question to students, have them recreate the same odd-number-printing
-// for loop using a while loop.
-
-### Additional Exercises
-
-# CODING EXERCISE #2 (20min)
-
-Temperature conversion (Part II): [https://github.com/ga-dc/temperature_converter](https://github.com/ga-dc/temperature_converter)  
-
-### You do - Fizzbuzz(can use conditionals)(20m)
-
-### Homework
-- [Choose your own adventure](https://github.com/ga-dc/choose_your_own_adventure_js)
-- [JS Basics Quiz](https://github.com/ga-dc/js-basics-hw)
+**[Choose Your Own Adventure](https://github.com/ga-wdi-exercises/choose_your_own_adventure_js)**
 
 # Review Questions
+
 * When would you use an array over an object? And vice-versa?
 * What is the difference between `undefined` and `null`?
 * Provide an example of a semantically-named variable. Explain your choice.
