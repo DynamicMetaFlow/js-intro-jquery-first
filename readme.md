@@ -134,9 +134,19 @@ console.log( "hello world" )
 
 Today's class is dedicated to solidifying your knowledge of Javascript fundamentals (i.e., things you covered in the course pre-work!). Because of that, the structure of the remainder of the class is going to be exercised-based. It will give you a chance to practice what you've already learned and dive in a bit deeper into the subject matter.
 
-**[Data Type Exercises](https://github.com/ga-wdi-exercises/js-data-types)**. An assorted grouping of Javascript exercises that
+### [Data Type Exercises](https://github.com/ga-wdi-exercises/js-data-types) (30 minutes, 1:00)
+An assorted grouping of Javascript exercises that test your knowledge of Javascript data types, conditionals and loops.
 
-**[Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter).** This exercise will tie together everything you practiced in the previous exercise (and more). If you finish this with time to spare in the lesson, start working on the homework.
+### Break (10 minutes, 1:10)
+
+### Check-In (15 minutes, 1:25)
+
+### [Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter) (30 minutes, 1:55)
+This exercise will tie together everything you practiced in the previous exercise (and more). If you finish this with time to spare in the lesson, start working on the homework.
+
+### Break (10 minutes, 2:05)
+
+### Check-In (15 minutes, 2:20)
 
 # Some Things To Keep In Mind
 
@@ -193,7 +203,7 @@ Sometimes you will need to use special characters or formatting in strings that 
 ```
 > You can check out more escape sequence examples [here](http://www.javascriptkit.com/jsref/escapesequence.shtml).  
 
-### Undefined & Null (5 minutes, 0:50)
+### Undefined & Null
 
 Values that indicate the lack of a meaningful value.
 * Anybody else find that weird? How is there more than one data type for nothing?
@@ -224,7 +234,7 @@ var nothing = undefined;
 
 So the main difference between `undefined` and `null` is intention. Other than that, they're both...nothing.  
 
-### Syntax (5 minutes, 1:05)
+### Syntax
 
 Variable syntax
 * Variables should be named using camelCase lettering.
@@ -282,24 +292,7 @@ So we all know the boolean values of `true` and `false`. But there is also a con
 * `null`
 * `undefined`
 * `NaN` (a special Number value meaning- Not-a-Number!)
-
 > Everything else is "truthy". Why might we need this programmatic concept of "truthy" and "falsey"? (ST-WG)
-
-### Whitelisting vs Blacklisting
-What's wrong with the following code?:
-
-```javascript
-var age = 24;
-if(age > 21){
-  console.log("Come on in!")
-}
-else if(age > 75){
-  console.log("Come on in, but I don't know if this is the place for you!")
-}
-else{
-  console.log("get outta here youngin!")
-}
-```
 
 # Homework
 
