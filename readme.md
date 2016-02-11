@@ -284,7 +284,7 @@ You can also pass in a string as an argument to have the pop up box contain that
 var age = prompt("How old are you?")
 ```
 
-### Truthiness and Falsiness (5 minutes, 1:55)
+### "Truthiness" and "Falsiness"
 So we all know the boolean values of `true` and `false`. But there is also a concept of "truthy" and "falsey". In Javascript, the following things are "falsey"...
 * `false`
 * `0` (zero)
