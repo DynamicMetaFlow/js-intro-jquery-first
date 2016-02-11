@@ -14,7 +14,7 @@
 * Write a for loop and while loop in JS and differentiate between them
 * Utilize loops to iterate through complex data types
 
-## HTML, CSS and Javascript (20 min, 0:20)
+## Framing (20 min, 0:20)
 
 **What are the main components of front-end web development?**  
 > HTML, CSS and Javascript.
