@@ -20,9 +20,9 @@
 > HTML, CSS and Javascript.
 
 **What roles do HTML and CSS play in a web site or application?**
-> HTML: Structure
-> CSS: Styling
-> JS: What do the web sites we have build so far lack?
+> HTML: Structure  
+> CSS: Styling  
+> JS: What do the web sites we have build so far lack?  
 
 ### Think-Pair-Share: Identify JS Features in Cookie Clicker
 
@@ -45,9 +45,10 @@
 * When I click a cookie, CC is able to increment and update the counter on the page without a hard refresh.
 * Gives the page a much smoother user experience compared to a static page that doesn't have this sort of functionality.
 
-**Communication with a server**
-* Javascript is somehow telling a server that (a) a user has done something, (b) save that interaction and (c) display the results of that interaction to all other users.
-> Does Cookie Clicker use local storage?
+**Storage / Communication with a Server**
+* Javascript is telling the browser that (a) a user has done something, (b) it should save the result of that interaction and (c) display the results of that interaction to the user whenever he or she is at the site.
+* In the case of Cookie Clicker, that information is saved in local storage using -- ironically -- cookies.
+* We can also use Javascript to communicate with a server.
 
 This is not an exhaustive list of Javascript properties, but we'll go over these and more in more detail later on in the course.  
 
