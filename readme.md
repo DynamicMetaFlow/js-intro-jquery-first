@@ -26,8 +26,8 @@
 
 ### Think-Pair-Share: Identify JS Features in Cookie Clicker
 
-**Think:** Spend three minutes playing around with Cookie Clicker and think about the following questions...
-* What Cookie Clicker features are powered by Javascript?
+**Think:** Spend three minutes playing around with **[Cookie Clicker](http://orteil.dashnet.org/cookieclicker/)** and think about the following questions...
+* What Cookie Clicker features are (or are not!) powered by Javascript?
 * What categories of functionality does Javascript give a web app?
 * Why would you say a particular feature is powered by Javascript as opposed to HTML or CSS?  
 
@@ -46,9 +46,12 @@
 * Gives the page a much smoother user experience compared to a static page that doesn't have this sort of functionality.
 
 **Storage / Communication with a Server**
-* Javascript is telling the browser that (a) a user has done something, (b) it should save the result of that interaction and (c) display the results of that interaction to the user whenever he or she is at the site.
-* In the case of Cookie Clicker, that information is saved in local storage using -- ironically -- cookies.
-* We can also use Javascript to communicate with a server.
+* Javascript is telling the browser that...
+  1. The user has done something.  
+  2. It should save the result of that interaction.  
+  3. It should display the results of that interaction to the user whenever he or she is at the site.  
+* In the case of Cookie Clicker, that information is saved in local storage using -- ironically -- cookies.  
+* We can also use Javascript to communicate with a server.  
 
 This is not an exhaustive list of Javascript properties, but we'll go over these and more in more detail later on in the course.  
 
@@ -73,12 +76,12 @@ Javascript enables us to do all that in a browser.
 
 Barriers to entry for learning Javascript are very low.
 * No additional software required to run it. Just a text editor and a browser.
-* You can even run it directly in the browser via its Javascript console.
+* You can even run it directly in the browser via its Javascript console. Open it using `command + option + j` from the browser.
   * Ex. Hide images on the GA website.
 * On top of that, it's supported by all web browsers.
 
 Javascript has evolved since its creation.
-* One of the biggest additions to JS was AJAX, which allows use to reload parts of a page without refreshing the entire thing (just like on Facebook). Big implications for User Experience.
+* One of the biggest additions to JS was AJAX (Asynchronous Javascript and XML - [docs](http://api.jquery.com/jquery.ajax/)), which allows us to reload parts of a page without refreshing the entire thing (just like on Facebook). Big implications for User Experience.
 
 A lot of frameworks and libraries -- like Backbone and jQuery -- have emerged that enable us to do so much more -- and do it quickly -- with Javascript.
 
@@ -98,7 +101,7 @@ $ touch index.html script.js
 <html>
   <head>
     <title>Yo</title>
-    <script src="script.js"></script>
+    <script src="script.js" type="text/javascript"></script>
   </head>
   <body>
 
@@ -108,7 +111,7 @@ $ touch index.html script.js
 
 ## Next, open the site in Chrome and open the Dev Tools
 
-Open the Javascript console in the browser using the following shortcut: `Command + Option + I`
+Open the Javascript console in the browser using the following shortcut: `command + option + j`
 
 The "Console" is a REPL (`Read-Eval-Print Loop`)
 * What's that? A programming environment that lets us run Javascript code one line at a time.
