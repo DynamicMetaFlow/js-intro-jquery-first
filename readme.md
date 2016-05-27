@@ -5,7 +5,7 @@
 * Define and use complex data types.
 * Explain the difference between `prompt` and `console.log`
 * Practice proper JS syntax and semantic variable naming.
-* Differentiate between true & false && truthy & falsey
+* Differentiate between `true`, `false`, "truthy", and "falsey"
 * Write an if, else if, and else statement in JS
 * Write a for loop and while loop in JS and differentiate between them
 * Utilize loops to iterate through complex data types
@@ -15,6 +15,7 @@
 The source code of [Lights Out](http://ga-wdi-exercises.github.io/lights_out/) and [Tic Tac Toe](http://ga-wdi-exercises.github.io/tic_tac_toe/) works, but is "bad".
 
 - What is inefficient in this code?
+- **DRY** is a programming acronym for "Don't Repeat Yourself". What repeats here?
 
 ## Variables
 
@@ -93,6 +94,9 @@ function move(id){
 
 Now the whole `onclick` becomes simply `onclick="move('#a')"`.
 
+## Salvage Lights Out
+
+- What could you do to the source code of [Lights Out](http://ga-wdi-exercises.github.io/lights_out/) to make it more efficient?
 
 ## Writing Javascript
 
@@ -114,9 +118,11 @@ Clone down this lesson plan, and open the folder in Atom (`atom .`). Look at `sc
 ## Practicing Javascript
 
 - [JS Order Practice](https://github.com/ga-wdi-exercises/js_order_practice/tree/jquery)
-  - Checkout the `jquery` branch
-- [JS Data Types](https://github.com/ga-wdi-exercises/js-data-types)
+    - Individual
+    - Checkout the `jquery` branch
 - [JS Fizzbuzz](https://github.com/ga-wdi-exercises/fizzbuzz_js)
+    - In Groups
+- [JS Data Types](https://github.com/ga-wdi-exercises/js-data-types)
 
 ## JS Concepts
 
@@ -163,18 +169,19 @@ if(!name){
 ## Practicing Javascript
 
 - [Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter)
-- [Pixel Art](https://github.com/ga-wdi-exercises/temperature_converter)
 
 ## Review Questions
 
-* When would you use an array over an object? And vice-versa?
-* What is the difference between `undefined` and `null`?
-* Provide an example of a semantically-named variable. Explain your choice.
-* What role does Javascript play on a website?
-* What are the five primitive data types?
-* What are the two composite data types? When would you use each?
-* What is an example of type coercion?
-* What is an example of a semantically-named variable?
+- What role does Javascript play on a website?
+- What are the five primitive data types?
+- When would you use an array over an object? And vice-versa?
+
+### Advanced
+
+- What is the difference between `undefined` and `null`?
+- What is an example of type coercion?
+- What are the two composite data types? When would you use each?
+- Provide an example of a semantically-named variable. Explain your choice.
 
 <script src="jquery.min.js"></script>
 <script src="script.js"></script>

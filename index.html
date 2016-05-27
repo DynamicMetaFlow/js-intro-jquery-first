@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
   <meta charset="utf-8"><!-- All this HTML was generated using Pandoc and Tidy-HTML5 -->
@@ -28,7 +28,7 @@
     <li>Define and use complex data types.</li>
     <li>Explain the difference between <code>prompt</code> and <code>console.log</code></li>
     <li>Practice proper JS syntax and semantic variable naming.</li>
-    <li>Differentiate between true & false &amp;& truthy & falsey</li>
+    <li>Differentiate between <code>true</code>, <code>false</code>, "truthy", and "falsey"</li>
     <li>Write an if, else if, and else statement in JS</li>
     <li>Write a for loop and while loop in JS and differentiate between them</li>
     <li>Utilize loops to iterate through complex data types</li>
@@ -37,6 +37,7 @@
   <p>The source code of <a href="http://ga-wdi-exercises.github.io/lights_out/">Lights Out</a> and <a href="http://ga-wdi-exercises.github.io/tic_tac_toe/">Tic Tac Toe</a> works, but is "bad".</p>
   <ul>
     <li>What is inefficient in this code?</li>
+    <li><strong>DRY</strong> is a programming acronym for "Don't Repeat Yourself". What repeats here?</li>
   </ul>
   <h2 id="variables">Variables</h2>
   <p>A variable is a bucket. You can put data in it. Then you can re-use it as many times as you want.</p>
@@ -81,6 +82,11 @@ var p2Color = 'pink';</code></pre>
   }
 }</code></pre>
   <p>Now the whole <code>onclick</code> becomes simply <code>onclick="move('#a')"</code>.</p>
+  <h2 id="salvage-lights-out">Salvage Lights Out</h2>
+  <ul>
+    <li>What could you do to the source code of <a href="http://ga-wdi-exercises.github.io/lights_out/">Lights Out</a> to make it more efficient?
+    </li>
+  </ul>
   <h2 id="writing-javascript">Writing Javascript</h2>
   <h3 id="console">Console</h3>
   <p>Open the Chrome console (Command + Option + J). This is a REPL (<code>Read-Eval-Print Loop</code>), like repl.it. You will <strong>never use repl.it again</strong>. Use this instead.</p>
@@ -97,13 +103,19 @@ var p2Color = 'pink';</code></pre>
   <ul>
     <li>
       <a href="https://github.com/ga-wdi-exercises/js_order_practice/tree/jquery">JS Order Practice</a>
-    </li>
-    <li>Checkout the <code>jquery</code> branch</li>
-    <li>
-      <a href="https://github.com/ga-wdi-exercises/js-data-types">JS Data Types</a>
+      <ul>
+        <li>Individual</li>
+        <li>Checkout the <code>jquery</code> branch</li>
+      </ul>
     </li>
     <li>
       <a href="https://github.com/ga-wdi-exercises/fizzbuzz_js">JS Fizzbuzz</a>
+      <ul>
+        <li>In Groups</li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://github.com/ga-wdi-exercises/js-data-types">JS Data Types</a>
     </li>
   </ul>
   <h2 id="js-concepts">JS Concepts</h2>
@@ -139,20 +151,19 @@ if(!name){
     <li>
       <a href="https://github.com/ga-wdi-exercises/temperature_converter">Temperature Converter</a>
     </li>
-    <li>
-      <a href="https://github.com/ga-wdi-exercises/temperature_converter">Pixel Art</a>
-    </li>
   </ul>
   <h2 id="review-questions">Review Questions</h2>
   <ul>
-    <li>When would you use an array over an object? And vice-versa?</li>
-    <li>What is the difference between <code>undefined</code> and <code>null</code>?</li>
-    <li>Provide an example of a semantically-named variable. Explain your choice.</li>
     <li>What role does Javascript play on a website?</li>
     <li>What are the five primitive data types?</li>
-    <li>What are the two composite data types? When would you use each?</li>
+    <li>When would you use an array over an object? And vice-versa?</li>
+  </ul>
+  <h3 id="advanced">Advanced</h3>
+  <ul>
+    <li>What is the difference between <code>undefined</code> and <code>null</code>?</li>
     <li>What is an example of type coercion?</li>
-    <li>What is an example of a semantically-named variable?</li>
+    <li>What are the two composite data types? When would you use each?</li>
+    <li>Provide an example of a semantically-named variable. Explain your choice.</li>
   </ul>
   <script src="jquery.min.js">
   </script> 
