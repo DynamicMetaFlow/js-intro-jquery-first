@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="generator" content="HTML Tidy for HTML5 for Mac OS X version 5.2.0">
+  <meta charset="utf-8"><!-- All this HTML was generated using Pandoc and Tidy-HTML5 -->
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>js-intro-jq-first</title>
+  <script>
+  document.addEventListener("DOMContentLoaded", function(){
+    var hTags = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+    [].forEach.call(hTags, function(hTag){
+      var link  = document.createElement("A");
+      link.href = "#" + hTag.id;
+      link.classList.add("nav");
+      link.textContent  = (hTag.textContent);
+      hTag.innerHTML    = link.outerHTML;
+    });
+  });
+  </script>
+  <style>
+  *{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:inherit;
+    font-weight:inherit;
+    font-family:inherit;
+    font-style:inherit;
+    text-decoration:inherit;
+    line-height:inherit;
+    color:inherit;
+  }
+  html{
+    font-size:24px;
+    line-height:32px;
+    color:#444;
+  }
+  body{
+    max-width:800px;
+    margin:0 auto;
+  }
+  h1, h2, h3, h4, h5, h6{
+    font-family:"Helvetica Neue", Helvetica, sans-serif;
+    font-weight:bold;
+    margin:2em 0 1em 0;
+  }
+  h1 a{
+    font-size:36px;
+    line-height:60px;
+    border-top:2px solid #ccc;
+    text-align:center;
+  }
+  h2 a{
+    font-size:28px;
+    line-height:50px;
+    background-color:#eee;
+    border-top:1px solid #ccc;
+    text-align:center;
+  }
+  h3 a{
+    font-size:24px;
+    line-height:30px;
+    border-bottom:1px solid #ccc;
+  }
+  h4 a{
+    font-size:18px;
+    line-height:30px;
+  }
+  p, li, pre{
+    margin:1em 0;
+  }
+  a{
+    color:#369;
+    text-decoration:underline;
+  }
+  a:hover{
+    color:#69c;
+  }
+  a.nav{
+    display:block;
+    text-decoration:none;
+    color:#800;
+  }
+  a.nav:hover{
+    color:#c00;
+  }
+  li{
+    list-style-position:inside;
+  }
+  pre, code{
+    font-family:"Andale Mono", "Courier New", monospace;
+    font-size:18px;
+    line-height:30px;
+    color:#000;
+    background-color:#f0f0f0;
+    padding:5px;
+    border-radius:5px;
+    vertical-align:baseline;
+    white-space:pre-wrap;
+  }
+  pre code{
+    padding:0;
+  }
+  em{
+    font-style:italic;
+  }
+  strong{
+    font-weight:bold;
+  }
+  input{
+    background-color:#999;
+    color:#fff;
+    border-radius:5px;
+    border-bottom:1px solid #333;
+    padding:5px 10px;
+  }
+  </style>
+</head>
+<body>
+  <h1 id="intro-to-javascript">Intro to Javascript</h1>
+  <h2 id="learning-objectives">Learning Objectives</h2>
+  <ul>
+    <li>List and describe the primitive data types.</li>
+    <li>Define and use complex data types.</li>
+    <li>Explain the difference between <code>prompt</code> and <code>console.log</code></li>
+    <li>Practice proper JS syntax and semantic variable naming.</li>
+    <li>Differentiate between true & false &amp;& truthy & falsey</li>
+    <li>Write an if, else if, and else statement in JS</li>
+    <li>Write a for loop and while loop in JS and differentiate between them</li>
+    <li>Utilize loops to iterate through complex data types</li>
+  </ul>
+  <h2 id="framing">Framing</h2>
+  <p>The source code of <a href="http://ga-wdi-exercises.github.io/lights_out/">Lights Out</a> and <a href="http://ga-wdi-exercises.github.io/tic_tac_toe/">Tic Tac Toe</a> works, but is "bad".</p>
+  <ul>
+    <li>What is inefficient in this code?</li>
+  </ul>
+  <h2 id="variables">Variables</h2>
+  <p>A variable is a bucket. You can put data in it. Then you can re-use it as many times as you want.</p>
+  <p>"Data" just doesn't mean numbers -- it means literally anything in Javascript.</p>
+  <h3 id="reusability">Reusability</h3>
+  <pre class="js"><code>var player = $('#player');</code></pre>
+  <p>Now instead of having to write <code>$('#player')</code> everywhere, we can write <code>player</code>.</p>
+  <h3 id="ease-of-changing">Ease of changing</h3>
+  <ul>
+    <li>If we decide to use colors other than red and blue, what has to be changed?</li>
+  </ul>
+  <pre class="js"><code>var p1Color = 'skyblue';
+var p2Color = 'pink';</code></pre>
+  <p>Now anywhere we have 'skyblue' we can use <code>p1Color</code>, and same for 'pink'. If I want to change the color, I need only change those two lines.</p>
+  <h2 id="functions">Functions</h2>
+  <p>A function is a machine. You can re-use it as many times as you want.</p>
+  <h3 id="reusability-1">Reusability</h3>
+  <pre class="js"><code>function changePlayer(){
+  if(player.text() == p1Color){
+    player.text(p2Color)
+  }else{
+    player.text(p1Color)
+  }
+}</code></pre>
+  <p>Now this:</p>
+  <pre class="js"><code>if($('#player').text() == 'skyblue'){$('#player').text('pink')}else{$('#player').text('skyblue')}</code></pre>
+  <p>...can be replaced with <code>changePlayer()</code>.</p>
+  <h3 id="arguments">Arguments</h3>
+  <p>You can pass data into function. This is called an "argument" or a "parameter".</p>
+  <pre class="js"><code>function setBackground(id){
+  $(id).css('background-color', player.text());
+}</code></pre>
+  <p>Now we can replace <code>$('#a').css('background-color', $('#player').text());</code> with <code>setBackground('#a')</code>.</p>
+  <h3 id="functions-calling-functions">Functions calling functions</h3>
+  <pre class="js"><code>function move(id){
+  if($(id).hasClass('played')){
+    
+  }else{
+    $(id).addClass('played');
+    setBackground(id);
+    changePlayer();
+  }
+}</code></pre>
+  <p>Now the whole <code>onclick</code> becomes simply <code>onclick="move('#a')"</code>.</p>
+  <h2 id="writing-javascript">Writing Javascript</h2>
+  <h3 id="console">Console</h3>
+  <p>Open the Chrome console (Command + Option + J). This is a REPL (<code>Read-Eval-Print Loop</code>), like repl.it. You will <strong>never use repl.it again</strong>. Use this instead.</p>
+  <p><strong>You should always have this open</strong> whenever you are doing work that involves front-end Javascript. It will show you any errors.</p>
+  <ul>
+    <li>Use jQuery to change the color of all paragraphs to red.</li>
+  </ul>
+  <h3 id="script-files">Script files</h3>
+  <p>Clone down this lesson plan, and open the folder in Atom (<code>atom .</code>). Look at <code>script.js</code>.</p>
+  <ul>
+    <li>Use jQuery to change the color of all paragraphs to blue.</li>
+  </ul>
+  <h2 id="practicing-javascript">Practicing Javascript</h2>
+  <ul>
+    <li>
+      <a href="https://github.com/ga-wdi-exercises/js_order_practice/tree/jquery">JS Order Practice</a>
+    </li>
+    <li>Checkout the <code>jquery</code> branch</li>
+    <li>
+      <a href="https://github.com/ga-wdi-exercises/js-data-types">JS Data Types</a>
+    </li>
+    <li>
+      <a href="https://github.com/ga-wdi-exercises/fizzbuzz_js">JS Fizzbuzz</a>
+    </li>
+  </ul>
+  <h2 id="js-concepts">JS Concepts</h2>
+  <h3 id="getting-user-input">Getting user input</h3>
+  <p>At any point in our JS code, if we write <code>prompt()</code> a pop up box will open in our browser for a user to enter in text.</p>
+  <pre class="js"><code>// Prompts user and stores value in the variable
+var age = prompt(;);
+// Logs value stored
+console.log('I wish I looked that good when I was ' + age);</code></pre>
+  <p>This should not be confused with <code>alert</code> which simply makes a box pop up. It takes no input.</p>
+  <h3 id="truthiness-and-falsiness">"Truthiness" and "Falsiness"</h3>
+  <p>You've seen the boolean values of <code>true</code> and <code>false</code>.</p>
+  <p>There is also a concept of "truthy" and "falsey". In Javascript, the following things are "falsey":</p>
+  <ul>
+    <li><code>false</code></li>
+    <li><code>0</code> (zero)</li>
+    <li><code>""</code> (empty string)</li>
+    <li><code>null</code></li>
+    <li><code>undefined</code></li>
+    <li><code>NaN</code> (a special Number value meaning- Not-a-Number!)</li>
+  </ul>
+  <p>Everything else is "truthy".</p>
+  <p>These do the same thing:</p>
+  <pre class="js"><code>var name = '';
+if(name == ''){
+  alert('Enter your name, please');
+}
+if(!name){
+  alert('Enter your name, please');
+}</code></pre>
+  <h2 id="practicing-javascript-1">Practicing Javascript</h2>
+  <ul>
+    <li>
+      <a href="https://github.com/ga-wdi-exercises/temperature_converter">Temperature Converter</a>
+    </li>
+    <li>
+      <a href="https://github.com/ga-wdi-exercises/temperature_converter">Pixel Art</a>
+    </li>
+  </ul>
+  <h2 id="review-questions">Review Questions</h2>
+  <ul>
+    <li>When would you use an array over an object? And vice-versa?</li>
+    <li>What is the difference between <code>undefined</code> and <code>null</code>?</li>
+    <li>Provide an example of a semantically-named variable. Explain your choice.</li>
+    <li>What role does Javascript play on a website?</li>
+    <li>What are the five primitive data types?</li>
+    <li>What are the two composite data types? When would you use each?</li>
+    <li>What is an example of type coercion?</li>
+    <li>What is an example of a semantically-named variable?</li>
+  </ul>
+  <script src="jquery.min.js">
+  </script> 
+  <script src="script.js">
+  </script>
+</body>
+</html>

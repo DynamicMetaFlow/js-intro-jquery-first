@@ -1,307 +1,171 @@
 # Intro to Javascript
 
 ## Learning Objectives
-* Describe the role Javascript plays alongside HTML and CSS.
 * List and describe the primitive data types.
-* Describe uses of mathematical operators in Javascript.
-* Define type coercion.
 * Define and use complex data types.
 * Explain the difference between `prompt` and `console.log`
 * Practice proper JS syntax and semantic variable naming.
 * Differentiate between true & false && truthy & falsey
-* Describe why control flow is utilized in computer programming
 * Write an if, else if, and else statement in JS
 * Write a for loop and while loop in JS and differentiate between them
 * Utilize loops to iterate through complex data types
 
-## Framing (20 min, 0:20)
+## Framing
 
-**What are the main components of front-end web development?**  
-> HTML, CSS and Javascript.
+The source code of [Lights Out](http://ga-wdi-exercises.github.io/lights_out/) and [Tic Tac Toe](http://ga-wdi-exercises.github.io/tic_tac_toe/) works, but is "bad".
 
-**What roles do HTML and CSS play in a web site or application?**
-> HTML: Structure  
-> CSS: Styling  
-> JS: What do the web sites we have build so far lack?  
+- What is inefficient in this code?
 
-### Think-Pair-Share: Identify JS Features in Cookie Clicker
+## Variables
 
-**Think:** Spend three minutes playing around with **[Cookie Clicker](http://orteil.dashnet.org/cookieclicker/)** and think about the following questions...
-* What Cookie Clicker features are (or are not!) powered by Javascript?
-* What categories of functionality does Javascript give a web app?
-* Why would you say a particular feature is powered by Javascript as opposed to HTML or CSS?  
+A variable is a bucket. You can put data in it. Then you can re-use it as many times as you want.
 
-**Pair:** Spend another three minutes discussing and comparing your findings with a partner.  
+"Data" just doesn't mean numbers -- it means literally anything in Javascript.
 
-**Share:** We'll discuss our findings as a class.  
-
-#### Findings
-
-**Interactivity**
-* Click something, something happens.
-* Javascript defines what happens on a page depending on how you interact with it.
-
-**No Refreshes / User Experience**
-* When I click a cookie, CC is able to increment and update the counter on the page without a hard refresh.
-* Gives the page a much smoother user experience compared to a static page that doesn't have this sort of functionality.
-
-**Storage / Communication with a Server**
-* Javascript is telling the browser that...
-  1. The user has done something.  
-  2. It should save the result of that interaction.  
-  3. It should display the results of that interaction to the user whenever he or she is at the site.  
-* In the case of Cookie Clicker, that information is saved in local storage using -- ironically -- cookies.  
-* We can also use Javascript to communicate with a server.  
-
-This is not an exhaustive list of Javascript properties, but we'll go over these and more in more detail later on in the course.  
-
-So, to sum up the main three components of front-end web development up in one word each...
-* HTML: Structure
-* CSS: Styling
-* Javascript: Behavior
-
-## Javascript: The Client-Side Programming Language of the Web (5 minutes, 0:25)
-
-**Brief history:** Created in 10 days by Brendan Eich, of Mozilla. *Not* related to Java in any way but its name.
-* "Java" is to "Javascript" as "ham" is to "hamster"
-
-**Q:** What's a programming language?  
-* What can it do that a markup language like HTML can't?
-* It let's us do things! It lets us act on information, manipulate it, display it, pretty much whatever we want.
-
-Javascript enables us to do all that in a browser.  
-* Using the tools you learned in the pre-work (e.g., data types, loops, functions).
-
-### Why is it the dominant programming language of the web?
-
-Barriers to entry for learning Javascript are very low.
-* No additional software required to run it. Just a text editor and a browser.
-* You can even run it directly in the browser via its Javascript console. Open it using `command + option + j` from the browser.
-  * Ex. Hide images on the GA website.
-* On top of that, it's supported by all web browsers.
-
-Javascript has evolved since its creation.
-* One of the biggest additions to JS was AJAX (Asynchronous Javascript and XML - [docs](http://api.jquery.com/jquery.ajax/)), which allows us to reload parts of a page without refreshing the entire thing (just like on Facebook). Big implications for User Experience.
-
-A lot of frameworks and libraries -- like Backbone and jQuery -- have emerged that enable us to do so much more -- and do it quickly -- with Javascript.
-
-# Setting up our environment (5 minutes, 0:30)
-
-## First, create your HTML and JS
-
-```bash
-# In Terminal...
-$ touch index.html script.js
-```
-
-```html
-<!-- index.html -->
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Yo</title>
-    <script src="script.js" type="text/javascript"></script>
-  </head>
-  <body>
-
-  </body>
-</html>
-```
-
-## Next, open the site in Chrome and open the Dev Tools
-
-Open the Javascript console in the browser using the following shortcut: `command + option + j`
-
-The "Console" is a REPL (`Read-Eval-Print Loop`)
-* What's that? A programming environment that lets us run Javascript code one line at a time.
-* What does it do?
-  1. (R)eads our code.
-  2. (E)valuates it.
-  3. (P)rints it to the console.
-  4. Then it (L)oops back to the beginning, ready to (R)ead the next line of code we feed it.
-* Try running some simple lines of code (e.g., `2+2`) in the console!
-
-> `⌘ + ⌥ + i` enters you in the the Chrome dev tools. Here you can do a bunch of stuff like inspect elements and looks at the html. More importantly for this class though, is it allows you to access the console which interacts with the JS you loaded to your page. In our case we'll see that interaction with the code below  
-
-We can also run whatever code is located in the `script.js` that is referenced in `index.html`. Try putting the following code in `script.js` and reload the page...
+### Reusability
 
 ```js
-// script.js
-
-console.log( "hello world" )
+var player = $('#player');
 ```
-> `console.log()` is just a way to log or print something, in this case our REPL.  
 
-# Exercises
+Now instead of having to write `$('#player')` everywhere, we can write `player`.
 
-Today's class is dedicated to solidifying your knowledge of Javascript fundamentals (i.e., things you covered in the course pre-work!). Because of that, the structure of the remainder of the class is going to be exercised-based. It will give you a chance to practice what you've already learned and dive in a bit deeper into the subject matter.
+### Ease of changing
 
-### [Data Type Exercises](https://github.com/ga-wdi-exercises/js-data-types) (30 minutes, 1:00)
-An assorted grouping of Javascript exercises that test your knowledge of Javascript data types, conditionals and loops.
-
-### Break (10 minutes, 1:10)
-
-### Check-In (15 minutes, 1:25)
-
-### [Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter) (30 minutes, 1:55)
-This exercise will tie together everything you practiced in the previous exercise (and more). If you finish this with time to spare in the lesson, start working on the homework.
-
-### Break (10 minutes, 2:05)
-
-### Check-In (15 minutes, 2:20)
-
-# Some Things To Keep In Mind
-
-### Type Coercion
-
-Javascript will try to make sense of any strange operations you throw at it.
-* By "strange", I mean subtracting a number from a string, or multiplying `null` by 100.
-* It does this through something called "type coercion" -- converting data types.
-
-You might encounter this when dealing with numerical values but for whatever reason some of them are in string form.
-* **Q: What are the return values of the following code examples?**
+- If we decide to use colors other than red and blue, what has to be changed?
 
 ```js
-// In some cases Javascript is helpful and converts strings to numbers in the correct way.
-"3" - "2"
-=> 1
-
-// ...but sometimes it doesn't. In this example, the + operator acts as if it's concatenating two strings.
-"3" + "2"
-=> 32
-
-// And this?
-"five" * 5;
-=> NaN
+var p1Color = 'skyblue';
+var p2Color = 'pink';
 ```
 
-When in doubt, convert data types that should be numbers using `parseInt()`.
+Now anywhere we have 'skyblue' we can use `p1Color`, and same for 'pink'. If I want to change the color, I need only change those two lines.
+
+## Functions
+
+A function is a machine. You can re-use it as many times as you want.
+
+### Reusability
 
 ```js
-// parseInt converts a string to a number value, if available.
-parseInt( "3" );
-=> 3
-
-parseInt( "burrito" );
-=> NaN
+function changePlayer(){
+  if(player.text() == p1Color){
+    player.text(p2Color)
+  }else{
+    player.text(p1Color)
+  }
+}
 ```
 
-There are other examples of type coercion, but the point here isn't to remember them all. Just be aware that sometimes Javascript will fire weird results back at you with no explanation. Sometimes, type coercion might be the culprit.
-
-### Escape sequences
-
-Sometimes you will need to use special characters or formatting in strings that can't be entered the same way as you would in a word processor. In these cases, you use "escape sequences".
-* Syntax: backslash + letter (e.g., `"\n"`).
+Now this:
 
 ```js
-// "\n" = new line
-"Hello\nGoodbye"
-=>"Hello"
-=>"Goodbye"
-
-// "\t" = tab
-"\tOnce upon a time..."
-=> "     Once upon a time..."
+if($('#player').text() == 'skyblue'){$('#player').text('pink')}else{$('#player').text('skyblue')}
 ```
-> You can check out more escape sequence examples [here](http://www.javascriptkit.com/jsref/escapesequence.shtml).  
 
-### Undefined & Null
+...can be replaced with `changePlayer()`.
 
-Values that indicate the lack of a meaningful value.
-* Anybody else find that weird? How is there more than one data type for nothing?
-* **Q: What's the difference?**
+### Arguments
 
-`undefined`: automatically applied to a variable with no value.  
+You can pass data into function. This is called an "argument" or a "parameter".
 
 ```js
-// A primitive data type of type undefined with only one value: "undefined".
-typeof undefined;
-=> "undefined"
-
-// Any property that has not been assigned a value is "undefined".
-var nothing;
-=> undefined
-
-// A function with no defined return value has a return value of "undefined".
-
-// You won't find yourself assigning "undefined" to a value. That's where "null" comes in.
-var nothing = undefined;
+function setBackground(id){
+  $(id).css('background-color', player.text());
+}
 ```
 
-`null`: an explicitly-assigned non-value.
-* Javascript will never set anything to `null` by itself. `null` only appears when you tell it to.
-* If I'm not mistaken, the only thing that's inherently `null` in Javascript is `null` itself!
-* **Q: Can you imagine a situation where that would be useful?**
-  * Placeholder for a variable that you know will be replaced with an actual value later on.
+Now we can replace `$('#a').css('background-color', $('#player').text());` with `setBackground('#a')`.
 
-So the main difference between `undefined` and `null` is intention. Other than that, they're both...nothing.  
-
-### Syntax
-
-Variable syntax
-* Variables should be named using camelCase lettering.
-  * First letter of first word lowercase. First letter of remaining words uppercase.
-  * No spaces or punctuation between words.
+### Functions calling functions
 
 ```js
-var pizzaTopping = "pepperoni";
+function move(id){
+  if($(id).hasClass('played')){
+    
+  }else{
+    $(id).addClass('played');
+    setBackground(id);
+    changePlayer();
+  }
+}
 ```
 
-Semicolons
-* General practice is to end every line with a semi-colon.
-* Usage depends on the developer.
+Now the whole `onclick` becomes simply `onclick="move('#a')"`.
 
-Comments
-* **Q: Why would you use comments?**
-  * Use to explain the purpose or reasoning behind a piece of code.
-  * Help out other developers and future you.
-    * If anything, it will help us out when grading your projects!
 
-```js
-// Single line
+## Writing Javascript
 
-/*
-  Multiple
-  line
-  comments
-*/
-```
+### Console
 
-### Prompt
+Open the Chrome console (Command + Option + J). This is a REPL (`Read-Eval-Print Loop`), like repl.it. You will **never use repl.it again**. Use this instead.
 
-We've learned a lot about basic data types, but it'd be nice if we had a way of getting user input into our browser! We'll learn some ways to use forms and such later in the course, but for now, we'll be getting user input using the `prompt()` function.
+**You should always have this open** whenever you are doing work that involves front-end Javascript. It will show you any errors.
+
+- Use jQuery to change the color of all paragraphs to red.
+
+### Script files
+
+Clone down this lesson plan, and open the folder in Atom (`atom .`). Look at `script.js`.
+
+- Use jQuery to change the color of all paragraphs to blue.
+
+
+## Practicing Javascript
+
+- [JS Order Practice](https://github.com/ga-wdi-exercises/js_order_practice/tree/jquery)
+  - Checkout the `jquery` branch
+- [JS Data Types](https://github.com/ga-wdi-exercises/js-data-types)
+- [JS Fizzbuzz](https://github.com/ga-wdi-exercises/fizzbuzz_js)
+
+## JS Concepts
+
+### Getting user input
 
 At any point in our JS code, if we write `prompt()` a pop up box will open in our browser for a user to enter in text.
 
 ```js
-// prompts user and stores value in the variable
-var valueOfPrompt = prompt()
-// logs value stored
-console.log(valueOfPrompt)
+// Prompts user and stores value in the variable
+var age = prompt(;);
+// Logs value stored
+console.log('I wish I looked that good when I was ' + age);
 ```
 
-You can also pass in a string as an argument to have the pop up box contain that string as a ... prompt.  
-
-```js
-var age = prompt("How old are you?")
-```
+This should not be confused with `alert` which simply makes a box pop up. It takes no input.
 
 ### "Truthiness" and "Falsiness"
-So we all know the boolean values of `true` and `false`. But there is also a concept of "truthy" and "falsey". In Javascript, the following things are "falsey"...
-* `false`
-* `0` (zero)
-* `""` (empty string)
-* `null`
-* `undefined`
-* `NaN` (a special Number value meaning- Not-a-Number!)
-> Everything else is "truthy". Why might we need this programmatic concept of "truthy" and "falsey"? (ST-WG)
 
-# Homework
+You've seen the boolean values of `true` and `false`.
 
-**[Choose Your Own Adventure](https://github.com/ga-wdi-exercises/choose_your_own_adventure_js)**
+There is also a concept of "truthy" and "falsey". In Javascript, the following things are "falsey":
 
-# Review Questions
+- `false`
+- `0` (zero)
+- `""` (empty string)
+- `null`
+- `undefined`
+- `NaN` (a special Number value meaning- Not-a-Number!)
+
+Everything else is "truthy".
+
+These do the same thing:
+
+```js
+var name = '';
+if(name == ''){
+  alert('Enter your name, please');
+}
+if(!name){
+  alert('Enter your name, please');
+}
+```
+
+## Practicing Javascript
+
+- [Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter)
+- [Pixel Art](https://github.com/ga-wdi-exercises/temperature_converter)
+
+## Review Questions
 
 * When would you use an array over an object? And vice-versa?
 * What is the difference between `undefined` and `null`?
@@ -311,3 +175,6 @@ So we all know the boolean values of `true` and `false`. But there is also a con
 * What are the two composite data types? When would you use each?
 * What is an example of type coercion?
 * What is an example of a semantically-named variable?
+
+<script src="jquery.min.js"></script>
+<script src="script.js"></script>
