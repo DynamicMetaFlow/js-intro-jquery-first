@@ -132,43 +132,25 @@ At any point in our JS code, if we write `prompt()` a pop up box will open in ou
 
 ```js
 // Prompts user and stores value in the variable
-var age = prompt(;);
+var age = prompt("What's your age?");
+```
+
+### Console logging
+
+`console.log` simply prints out some text into your Chrome console. This is the easiest way to debug your apps.
+
+```js
 // Logs value stored
 console.log('I wish I looked that good when I was ' + age);
 ```
 
-This should not be confused with `alert` which simply makes a box pop up. It takes no input.
-
-### "Truthiness" and "Falsiness"
-
-You've seen the boolean values of `true` and `false`.
-
-There is also a concept of "truthy" and "falsey". In Javascript, the following things are "falsey":
-
-- `false`
-- `0` (zero)
-- `""` (empty string)
-- `null`
-- `undefined`
-- `NaN` (a special Number value meaning- Not-a-Number!)
-
-Everything else is "truthy".
-
-These do the same thing:
-
-```js
-var name = '';
-if(name == ''){
-  alert('Enter your name, please');
-}
-if(!name){
-  alert('Enter your name, please');
-}
-```
+`console.log` should not be confused with `alert` which makes a box pop up.
 
 ## Practicing Javascript
 
+- [Pixel Art Mini](https://github.com/ga-wdi-exercises/pixart_js_mini)
 - [Temperature Converter](https://github.com/ga-wdi-exercises/temperature_converter)
+    - You do not need jQuery for this
 
 ## Review Questions
 

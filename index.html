@@ -122,34 +122,22 @@ var p2Color = 'pink';</code></pre>
   <h3 id="getting-user-input">Getting user input</h3>
   <p>At any point in our JS code, if we write <code>prompt()</code> a pop up box will open in our browser for a user to enter in text.</p>
   <pre class="js"><code>// Prompts user and stores value in the variable
-var age = prompt(;);
-// Logs value stored
+var age = prompt("What's your age?");</code></pre>
+  <h3 id="console-logging">Console logging</h3>
+  <p><code>console.log</code> simply prints out some text into your Chrome console. This is the easiest way to debug your apps.</p>
+  <pre class="js"><code>// Logs value stored
 console.log('I wish I looked that good when I was ' + age);</code></pre>
-  <p>This should not be confused with <code>alert</code> which simply makes a box pop up. It takes no input.</p>
-  <h3 id="truthiness-and-falsiness">"Truthiness" and "Falsiness"</h3>
-  <p>You've seen the boolean values of <code>true</code> and <code>false</code>.</p>
-  <p>There is also a concept of "truthy" and "falsey". In Javascript, the following things are "falsey":</p>
-  <ul>
-    <li><code>false</code></li>
-    <li><code>0</code> (zero)</li>
-    <li><code>""</code> (empty string)</li>
-    <li><code>null</code></li>
-    <li><code>undefined</code></li>
-    <li><code>NaN</code> (a special Number value meaning- Not-a-Number!)</li>
-  </ul>
-  <p>Everything else is "truthy".</p>
-  <p>These do the same thing:</p>
-  <pre class="js"><code>var name = '';
-if(name == ''){
-  alert('Enter your name, please');
-}
-if(!name){
-  alert('Enter your name, please');
-}</code></pre>
+  <p><code>console.log</code> should not be confused with <code>alert</code> which makes a box pop up.</p>
   <h2 id="practicing-javascript-1">Practicing Javascript</h2>
   <ul>
     <li>
+      <a href="https://github.com/ga-wdi-exercises/pixart_js_mini">Pixel Art Mini</a>
+    </li>
+    <li>
       <a href="https://github.com/ga-wdi-exercises/temperature_converter">Temperature Converter</a>
+      <ul>
+        <li>You do not need jQuery for this</li>
+      </ul>
     </li>
   </ul>
   <h2 id="review-questions">Review Questions</h2>
