@@ -146,6 +146,10 @@ console.log('I wish I looked that good when I was ' + age);
 
 `console.log` should not be confused with `alert` which makes a box pop up.
 
+### Javascript in your HTML vs. in a separate file
+
+Both work. Having your JS in a separate file is considered better practice for the same reason having CSS in a separate file is considered better practice: it's much neater, and *separates your concerns*.
+
 ## Practicing Javascript
 
 - [Pixel Art Mini](https://github.com/ga-wdi-exercises/pixart_js_mini)
